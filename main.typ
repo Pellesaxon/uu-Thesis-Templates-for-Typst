@@ -15,15 +15,12 @@
 #import "@preview/codly:1.3.0": *
 #import "@preview/codly-languages:0.1.1": *
 #import "uppsala_thesis.typ": *
+
 // =====================
 // Document setup
 // =====================
 #show: codly-init.with()
 #codly(languages: codly-languages)
-
-// =====================
-// Document styling
-// =====================
 
 #set text(
   font: "Roboto",
@@ -31,6 +28,10 @@
   lang: "en", // Typst webapp does not support all languages. Look it up if needed and run locally if necessary for spellchecking.
   overhang: false,
 )
+
+//If you don't want underlined links, comment out the next line:
+#show link: underline
+// #show link: set text(blue)
 
 #set enum(
   indent: 12pt,
@@ -209,15 +210,15 @@
 // Header with current section title
 #set page(
   header: [
-    #context {
+    #context{
       let headers = query(
-        heading.where(level: 1),
+        heading.where(level: 1)
       )
       let current_best = none
       for header in headers {
         if header.location().page() < here().page() {
           current_best = header
-        } else if header.location().page() == here().page() {
+        } else if header.location().page() == here().page(){
           current_best = header
           break
         } else {
@@ -233,10 +234,11 @@
           }
           #current_best.body
         ])
-
+        
         #v(-10pt)
         #line(length: 100%, stroke: 0.8pt)
       ]
+      
     }
   ],
 )

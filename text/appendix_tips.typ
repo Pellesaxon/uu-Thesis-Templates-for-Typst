@@ -80,7 +80,7 @@ Even if a reference has a URL to the actual text, it is not necessarily a web re
 Try to find authors and publication dates (year, month) even for web references, and *always* specify when they were accessed, as they can be updated at any time. This is done by setting the composit values ```yaml {value: X, date: Y}``` on the ```yaml url``` field.  An example is~@example:uu (see `refs.yml`).
 
 
-= Formulas, Figures, Images, Code <sec:formulas_figures_images_code>
+= Formulas, Figures, Images, Code, Timelines <sec:formulas_figures_images_code>
 
 Formulas, figures, and equations must be described. This means, for example, that each symbol must be explained in the text.
 
@@ -201,3 +201,68 @@ $ a^2 + b^2 = c^2 $
 
 Prove by induction:
 $ sum_(k=1)^n k = (n(n+1)) / 2 $
+
+== Timelines in typst <sec:examples:timelines>
+It is always nice to have timelines in reports. For this purpose I prefer using the timeliney package. Here is an example of a timeline from the project #link("https://typst.app/universe/package/timeliney/")[page]:
+
+#import "@preview/timeliney:0.4.0"
+
+#timeliney.timeline(
+  show-grid: true,
+  {
+    import timeliney: *
+      
+    headerline(group(([*2023*], 4)), group(([*2024*], 4)))
+    headerline(
+      group(..range(4).map(n => strong("Q" + str(n + 1)))),
+      group(..range(4).map(n => strong("Q" + str(n + 1)))),
+    )
+  
+    taskgroup(
+      title: [*Research*],
+      content: text(10pt, white)[*John + Julia*],
+      style: (stroke: 14pt + black),
+      {
+        task(
+          "Research the market",
+          (from: 0, to: 2, content: text(9pt)[John (70% done)]),
+          style: (stroke: 13pt + gray),
+        )
+        task(
+          "Conduct user surveys",
+          (from: 1, to: 3, content: text(9pt)[Julia (50% done)]),
+          style: (stroke: 13pt + gray),
+        )
+      },
+    )
+
+    taskgroup(title: [*Development*], {
+      task("Create mock-ups", (2, 3), style: (stroke: 2pt + gray))
+      task("Develop application", (3, 5), style: (stroke: 2pt + gray))
+      task("QA", (3.5, 6), style: (stroke: 2pt + gray))
+    })
+
+    taskgroup(title: [*Marketing*], {
+      task("Press demos", (3.5, 7), style: (stroke: 2pt + gray))
+      task("Social media advertising", (6, 7.5), style: (stroke: 2pt + gray))
+    })
+
+    milestone(
+      at: 3.75,
+      style: (stroke: (dash: "dashed")),
+      align(center, [
+        *Conference demo*\
+        Dec 2023
+      ])
+    )
+
+    milestone(
+      at: 6.5,
+      style: (stroke: (dash: "dashed")),
+      align(center, [
+        *App store launch*\
+        Aug 2024
+      ])
+    )
+  }
+)
