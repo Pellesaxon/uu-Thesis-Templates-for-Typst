@@ -184,7 +184,7 @@ Finally you can insert code in a figure as in @listing:sum.
 ) <listing:sum>
 
 == Math <sec:examples:math>
-You can decide if you want math in text such as $a^2+b^2=c^2$ or as a block like in @eq:area_half_circle. $ A = (pi r^2) / 2 = 1/2 pi r^2 $<eq:area_half_circle> Placing spaces after the opening dollar sign and whitespace before the closing dollar sign is the shorthand for blocking. You can also add alt text alt text using the
+You can decide if you want math in text such as $a^2+b^2=c^2$ or as a block like in @eq:area_half_circle. $ A = (pi r^2) / 2 = 1/2 pi r^2 $<eq:area_half_circle> Placing spaces after the opening dollar sign and whitespace before the closing dollar sign is the shorthand for blocking. You can also add alt text using the
 ```typ #math.equation(alt: "alt text", content)``` syntax. If you want the equation syntax to block use the block option ```typ #math.equation(block: true)``` as in @eq:integral
 
 #math.equation(
@@ -203,7 +203,7 @@ Prove by induction:
 $ sum_(k=1)^n k = (n(n+1)) / 2 $
 
 == Timelines in typst <sec:examples:timelines>
-It is always nice to have timelines in reports. For this purpose I prefer using the timeliney package. Here is an example of a timeline from the project #link("https://typst.app/universe/package/timeliney/")[page]:
+It is always nice to have timelines in reports. For this purpose I prefer using the `timeliney` package. Here is an example of a timeline from the project #link("https://typst.app/universe/package/timeliney/")[page]:
 
 #import "@preview/timeliney:0.4.0"
 
