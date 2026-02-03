@@ -1,4 +1,14 @@
-= Some Tips for Typst Usage <sec:typst_tips>
+#set heading(numbering: "A.1.1.1   ")
+#set page(
+  paper: "a4",
+  margin: 4cm,
+  numbering: "1",
+)
+
+// Include this line if rendered isolated
+// #bibliography("ref_examples.yml", style: "ieee",)
+
+= Some Tips for Typst Usage <app:typst_tips>
 
 To *refer* to sections, figures, tables, etc., use ```typ <sec:label> or #label("sec:label")``` to "set a mark" in the text or figure, and ```typ @sec:label or #ref(sec:label)``` to refer to it, for example, Read more on~#ref(<sec:formulas_figures_images_code>, form: "page") about naming sections, figures, etc. In Typst you can't label and refer to general text, but you can use headings for that, e.g.,
 ```typ
@@ -9,8 +19,6 @@ followed by
 ```typ 
 As mentioned in~@sec:purpose...
 ```
-
-See also~@app:appendix for how to handle appendices.
 
 To prevent references from appearing immediately after a *line break*, use a non-breaking space `like~this`, where the tilde character `~` creates a non-breaking space. This is also generally correct to use before numbers (and in large numbers in English, e.g., `100~000` for 100,000), and of course also before `@fig`. 
 
@@ -107,13 +115,16 @@ Uppsala University has 52~917 students @example:uu.
 
 Bell et al. @example:alma[p. 312] describes...
 
-@sec:background[Chapter] outlines ... and check out @sec:method as well as @app:appendix.
+@sec:examples[Chapter] outlines ... and check out @app:typst_tips as well as @sec:examples:figures.
 
 == Acronyms <sec:examples:acronyms>
 
 #import "@preview/abbr:0.3.0"
 // Add multiple entries, each of the form (short, long, long-plural).
 *NOTE:* Example usage of Acronyms. Acronyms list can be seen in abbreviations section as it can't be displayed twice.
+// #abbr.list(title: "Acronyms")
+
+#show: abbr.show-rule
 
 #abbr.make(
   ("PDE", "Partial Differential Equation"),
@@ -128,6 +139,7 @@ Bell et al. @example:alma[p. 312] describes...
 // #abbr.load-alt("abbreviations_alt.csv", supplement: "from French")
 
 *Constrained Equations*
+
 
 @BC:pla constrain the @DOF:pla of the @PDE:pla they act on.
 
@@ -148,7 +160,7 @@ The @TGV has a commercial speed of up to 320 km/h.
 Look at this fabulous building and statue in @img:university_hall.
 
 #figure(
-    image("/dependencies/university_hall.jpg", width: auto),
+    image("university_hall.jpg", width: auto),
     caption: "University Hall or the University Main Building is the main building of Uppsala University in Uppsala, Sweden. The statue in front of the building is Erik Gustaf Geijer (1783-1847), a Swedish writer, historian, poet, philosopher, and composer. Photo: ScanianDragon (2023).",
 ) <img:university_hall>
 
@@ -184,6 +196,9 @@ Finally you can insert code in a figure as in @listing:sum.
 ) <listing:sum>
 
 == Math <sec:examples:math>
+// Equetion numbering style
+#set math.equation(numbering: "(1)")
+
 You can decide if you want math in text such as $a^2+b^2=c^2$ or as a block like in @eq:area_half_circle. $ A = (pi r^2) / 2 = 1/2 pi r^2 $<eq:area_half_circle> Placing spaces after the opening dollar sign and whitespace before the closing dollar sign is the shorthand for blocking. You can also add alt text using the
 ```typ #math.equation(alt: "alt text", content)``` syntax. If you want the equation syntax to block use the block option ```typ #math.equation(block: true)``` as in @eq:integral
 
@@ -203,66 +218,6 @@ Prove by induction:
 $ sum_(k=1)^n k = (n(n+1)) / 2 $
 
 == Timelines in typst <sec:examples:timelines>
-It is always nice to have timelines in reports. For this purpose I prefer using the `timeliney` package. Here is an example of a timeline from the project #link("https://typst.app/universe/package/timeliney/")[page]:
+It is always nice to have timelines in reports. For this purpose I prefer using the `timeliney` package. Here is an example of a timeline for a optimization project and more info can be found on the #link("https://typst.app/universe/package/timeliney/")[project page]:
 
-#import "@preview/timeliney:0.4.0"
-
-#timeliney.timeline(
-  show-grid: true,
-  {
-    import timeliney: *
-      
-    headerline(group(([*2023*], 4)), group(([*2024*], 4)))
-    headerline(
-      group(..range(4).map(n => strong("Q" + str(n + 1)))),
-      group(..range(4).map(n => strong("Q" + str(n + 1)))),
-    )
-  
-    taskgroup(
-      title: [*Research*],
-      content: text(10pt, white)[*John + Julia*],
-      style: (stroke: 14pt + black),
-      {
-        task(
-          "Research the market",
-          (from: 0, to: 2, content: text(9pt)[John (70% done)]),
-          style: (stroke: 13pt + gray),
-        )
-        task(
-          "Conduct user surveys",
-          (from: 1, to: 3, content: text(9pt)[Julia (50% done)]),
-          style: (stroke: 13pt + gray),
-        )
-      },
-    )
-
-    taskgroup(title: [*Development*], {
-      task("Create mock-ups", (2, 3), style: (stroke: 2pt + gray))
-      task("Develop application", (3, 5), style: (stroke: 2pt + gray))
-      task("QA", (3.5, 6), style: (stroke: 2pt + gray))
-    })
-
-    taskgroup(title: [*Marketing*], {
-      task("Press demos", (3.5, 7), style: (stroke: 2pt + gray))
-      task("Social media advertising", (6, 7.5), style: (stroke: 2pt + gray))
-    })
-
-    milestone(
-      at: 3.75,
-      style: (stroke: (dash: "dashed")),
-      align(center, [
-        *Conference demo*\
-        Dec 2023
-      ])
-    )
-
-    milestone(
-      at: 6.5,
-      style: (stroke: (dash: "dashed")),
-      align(center, [
-        *App store launch*\
-        Aug 2024
-      ])
-    )
-  }
-)
+#include "timeplan.typ"

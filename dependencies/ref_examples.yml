@@ -461,3 +461,49 @@ snail-chapter:
         date: 2011
         volume: 4B
         page-range: 28
+
+
+
+# For appendix tips
+# Websites
+example:uu:
+  type: web
+  title: Almedalen
+  author: Uppsala University
+  date: 2024
+  url: 
+    value: https://www.uu.se/
+    date: 2024-06-17
+
+# Books
+example:alma:
+  type: Book
+  title: Business research methods
+  date: 2019
+  author: ["Bell, Emma", "Bryman, Alan", "Harley, Bill"]
+  location: Oxford
+  edition: Fifth edition
+  serial-number: 
+    isbn: "9780198809876"
+  language: en
+  publisher: Oxford University Press
+
+# Articles
+example:dependability:
+  type: article
+  title: Basic concepts and taxonomy of dependable and secure computing
+  date: 2004
+  author:
+    - Avizienis, Algirdas
+    - Laprie, Jean-Claude
+    - Randell, Brian
+    - Landwehr, Carl
+  serial-number: 
+    doi: 10.1109/TDSC.2004.2
+  page-range: 11-33
+  parent:
+    type: periodical
+    title: IEEE Transactions on Dependable and Secure Computing
+    volume: 1
+    issue: 1
+    publisher: IEEE

@@ -14,7 +14,7 @@
 #import "@preview/abbr:0.3.0"
 #import "@preview/codly:1.3.0": *
 #import "@preview/codly-languages:0.1.1": *
-#import "uppsala_thesis.typ": *
+#import "../full_report/uppsala_thesis.typ": *
 
 // =====================
 // Document setup
@@ -22,8 +22,9 @@
 #show: codly-init.with()
 #codly(languages: codly-languages)
 
+
 #set text(
-  font: "Roboto",
+  font: "Roboto", // If you don't have it Roboto is stored in dependencies. You might have to install static version for Typst to work
   size: 12pt,
   lang: "en", // Typst webapp does not support all languages. Look it up if needed and run locally if necessary for spellchecking.
   overhang: false,
@@ -295,6 +296,7 @@
 = Appendix <app:appendix>
 
 #include "text/appendix.typ"
+
 #if DRAFT {
-  include "text/appendix_tips.typ"
+  include "../dependencies/appendix_tips.typ"
 }

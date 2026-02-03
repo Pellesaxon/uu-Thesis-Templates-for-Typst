@@ -46,7 +46,7 @@
     dx: -margin / 2,
     dy: -margin / 2,
   )[
-    #image("dependencies/logo.svg", width: logo_width)
+    #image("../dependencies/logo.svg", width: logo_width)
   ]
 
   place(
@@ -84,7 +84,7 @@
     dx: 2.0cm,
     dy: 2.0cm,
   )[
-    #image("dependencies/logo_side.svg", width: 10cm)
+    #image("../dependencies/logo_side.svg", width: 10cm)
   ]
 
   place(
@@ -114,7 +114,7 @@
     dx: -margin / 2,
     dy: -margin / 2,
   )[
-    #image("dependencies/logo_black.svg", width: logo_width)
+    #image("../dependencies/logo_black.svg", width: logo_width)
   ]
 
   place(

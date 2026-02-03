@@ -1,0 +1,3 @@
+Here, you describe which methods/tools/techniques/approaches you used to solve the problem/answer the question. What methods did you concretely use to solve the problem? Which techniques/tools did you use?
+
+Don't forget to justify your choice of methods. Are there several reasonable alternatives? Describe why you did not choose them (e.g., why your chosen method is better). Show that it is reasonable to use this particular approach. This also applies in cases where it is predetermined which technique you should use.
