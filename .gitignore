@@ -1,2 +1,4 @@
 .vscode
-main.pdf
+*.pdf
+!full_report.pdf
+!specification.pdf
