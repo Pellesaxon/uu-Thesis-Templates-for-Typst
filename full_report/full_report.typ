@@ -14,7 +14,7 @@
 #import "@preview/abbr:0.3.0"
 #import "@preview/codly:1.3.0": *
 #import "@preview/codly-languages:0.1.1": *
-#import "../full_report/uppsala_thesis.typ": *
+#import "uppsala_thesis.typ": *
 
 // =====================
 // Document setup
@@ -149,9 +149,9 @@
 
 #title-page(cfg)
 
-// ----------------------
+// =====================
 // Abstract
-// ----------------------
+// =====================
 
 #abstract-page(cfg, include "text/abstract.typ")
 
