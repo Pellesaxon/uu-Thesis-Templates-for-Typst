@@ -1,4 +1,4 @@
 .vscode
 *.pdf
 !full_report.pdf
-!specification.pdf
+!thesis_specification.pdf
