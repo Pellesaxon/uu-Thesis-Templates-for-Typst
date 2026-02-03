@@ -24,7 +24,8 @@
 
 
 #set text(
-  font: "Roboto", // If you don't have it Roboto is stored in dependencies. You might have to install static version for Typst to work
+  font: "Roboto", // If you don't have it Roboto is stored in dependencies. You might have to install static version for Typst to work, Alternatively switch to Libertinus Serif
+  // font: "Libertinus Serif",
   size: 12pt,
   lang: "en", // Typst webapp does not support all languages. Look it up if needed and run locally if necessary for spellchecking.
   overhang: false,
