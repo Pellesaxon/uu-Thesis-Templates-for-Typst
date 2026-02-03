@@ -14,8 +14,6 @@
   "December",
 )
 
-#set page(margin: 2cm)
-
 #timeliney.timeline(
   show-grid: true,
   {

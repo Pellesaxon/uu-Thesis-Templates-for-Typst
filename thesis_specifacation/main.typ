@@ -1,3 +1,16 @@
+// Author: Oskar Perers
+//
+// Inspiration from:
+// Provided template as well as
+// https://github.com/independent-project-in-it-uu-2021/rapport-mall
+// and
+// https://www.overleaf.com/latex/templates/mall-kandidatarbete-i-teknisk-fysik-uppsala-universitet/hcvpscsrypvt
+
+// DRAFT VERSION
+// Change to false for final version
+#let DRAFT = true
+
+
 #set text(size: 12pt)
 #set page(
   paper: "a4",
@@ -85,13 +98,39 @@
 
 #pagebreak()
 
-= Title
-= Abstract
-= Background
-= Description of Tasks
-= Methods
-= Relevant Courses
-= Delimitations
-= Time Plan
+#if DRAFT {
+  text[
+    *NOTE:* For updated instructions, please refer to the latest guidelines.
+  ]
+}
 
+= Title
+#include "text/title.typ"
+
+= Abstract
+#include "text/abstract.typ"
+
+= Background
+#include "text/background.typ"
+
+= Description of Tasks
+#include "text/description.typ"
+
+= Methods
+#include "text/method.typ"
+
+= Relevant Courses
+#include "text/relevant_courses.typ"
+
+= Delimitations
+#include "text/delimitations.typ"
+
+= Time Plan
+// Create your own time plan, instructions are included in the appendix tips.
+
+#pagebreak()
 #bibliography("refs.yml", style: "ieee")
+
+#if DRAFT {
+  include "../dependencies/appendix_tips.typ"
+}

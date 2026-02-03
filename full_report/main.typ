@@ -244,13 +244,13 @@
   ],
 )
 
-// NOTE paragraph
 #if DRAFT {
   text[
     *NOTE:* The order and types of chapters/sections provided are just examples.
     You should decide on the best chapters and order for your work.
   ]
 }
+
 // ---------------------
 // Sections
 // ---------------------

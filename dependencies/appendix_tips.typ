@@ -12,15 +12,15 @@
 
 To *refer* to sections, figures, tables, etc., use ```typ <sec:label> or #label("sec:label")``` to "set a mark" in the text or figure, and ```typ @sec:label or #ref(sec:label)``` to refer to it, for example, Read more on~#ref(<sec:formulas_figures_images_code>, form: "page") about naming sections, figures, etc. In Typst you can't label and refer to general text, but you can use headings for that, e.g.,
 ```typ
-= Motivation <sec:motivation>
-// #label("sec:motivation")
+= Methods <sec:method>
+// #label("sec:methods")
 ```
 followed by
-```typ 
-As mentioned in~@sec:purpose...
+```typ
+As mentioned in~@sec:methods...
 ```
 
-To prevent references from appearing immediately after a *line break*, use a non-breaking space `like~this`, where the tilde character `~` creates a non-breaking space. This is also generally correct to use before numbers (and in large numbers in English, e.g., `100~000` for 100,000), and of course also before `@fig`. 
+To prevent references from appearing immediately after a *line break*, use a non-breaking space `like~this`, where the tilde character `~` creates a non-breaking space. This is also generally correct to use before numbers (and in large numbers in English, e.g., `100~000` for 100,000), and of course also before references to figures `@fig`. 
 
 To create a *paragraphbreak* it's best to use a blank line or ```typ #parbreak()```. #parbreak() To create a *page break* where the rest of the page becomes blank, use ```typ #pagebreak()```
 
@@ -85,7 +85,11 @@ Note that news articles (newspaper articles and the like) almost always have a p
 
 Even if a reference has a URL to the actual text, it is not necessarily a web reference, but sometimes an article/book, etc., that happens to be available online. It should then be described as an article/book/etc. (but of course preferably with the URL) so that one can make a preliminary assessment of the reference already when reading the reference list.
 
-Try to find authors and publication dates (year, month) even for web references, and *always* specify when they were accessed, as they can be updated at any time. This is done by setting the composit values ```yaml {value: X, date: Y}``` on the ```yaml url``` field.  An example is~@example:uu (see `refs.yml`).
+Try to find authors and publication dates (year, month) even for web references, and *always* specify when they were accessed, as they can be updated at any time. This is done by setting the composit values 
+
+```yaml {value: X, date: Y}``` 
+
+on the ```yaml url``` field.  An example is~@example:uu (see `refs.yml`).
 
 
 = Formulas, Figures, Images, Code, Timelines <sec:formulas_figures_images_code>
@@ -180,8 +184,12 @@ Tables can also be placed in figures as seen in @tab:numbers.
 ) <tab:numbers>
 
 == Code <sec:examples:code>
+#import "@preview/codly:1.3.0": *
+#import "@preview/codly-languages:0.1.1": *
+#show: codly-init.with()
+#codly(languages: codly-languages)
 
-Finally you can insert code in a figure as in @listing:sum.
+Finally, you can insert code in a figure as in @listing:sum. I like `codly` for syntax highlighting.
 
 #figure(
     ```python
@@ -217,6 +225,7 @@ $ a^2 + b^2 = c^2 $
 Prove by induction:
 $ sum_(k=1)^n k = (n(n+1)) / 2 $
 
+#set page(margin: 2cm)
 == Timelines in typst <sec:examples:timelines>
 It is always nice to have timelines in reports. For this purpose I prefer using the `timeliney` package. Here is an example of a timeline for a optimization project and more info can be found on the #link("https://typst.app/universe/package/timeliney/")[project page]:
 
