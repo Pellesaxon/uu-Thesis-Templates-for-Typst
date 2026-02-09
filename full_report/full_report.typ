@@ -14,6 +14,7 @@
 #import "@preview/abbr:0.3.0"
 #import "@preview/codly:1.3.0": *
 #import "@preview/codly-languages:0.1.1": *
+#import "@preview/tblr:0.4.4": *
 #import "uppsala_thesis.typ": *
 
 // =====================
@@ -81,6 +82,21 @@
     above: 24pt,
     below: 24pt,
   )[
+    // If figure is a table, place caption above, otherwise below.
+    #let caption_top = it.caption.kind == table
+    // #let caption_top = false
+    
+    // Caption above figure body
+    #if caption_top {
+      line(length: 100%, stroke: 0.8pt)
+      v(-10pt)
+      
+      align(left)[
+        #it.caption
+      ]
+      v(-10pt)
+    }
+
     // Top rule
     #line(length: 100%, stroke: 0.8pt)
     #v(-12pt)
@@ -88,19 +104,17 @@
     // Figure body (image / table / etc.)
     #it.body
 
-    // Rule above caption
+    // Botom rule
     #v(-12pt)
     #line(length: 100%, stroke: 0.8pt)
     #v(-10pt)
 
     // Caption
-    #if (it.caption != none) {
+    #if (it.caption != none and not caption_top) {
       [
         #align(left)[
           #it.caption
         ]
-
-        // Botom rule
         #v(-10pt)
         #line(length: 100%, stroke: 0.8pt)
       ]
