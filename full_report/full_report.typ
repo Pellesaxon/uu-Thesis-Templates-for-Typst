@@ -274,6 +274,9 @@
 = Conclusions <sec:conclusions>
 #include "text/conclusions.typ"
 
+= Declaration of generative AI use
+#include "text/declaration_ai.typ"
+
 #pagebreak()
 
 // =====================

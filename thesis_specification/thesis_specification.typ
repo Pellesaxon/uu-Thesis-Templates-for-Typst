@@ -127,6 +127,11 @@
 = Time Plan
 // Create your own time plan, instructions are included in the appendix tips.
 
+= Declaration of generative AI use
+// Describe any use of generative AI in the creation of this work, including tools used and how they were utilized. This is important for transparency and academic integrity.
+#include "text/declaration_ai.typ"
+
+
 #pagebreak()
 #bibliography("refs.yml", style: "ieee")
 
