@@ -25,7 +25,7 @@ To prevent references from appearing immediately after a *line break*, use a non
 To create a *paragraphbreak* it's best to use a blank line or ```typ #parbreak()```. #parbreak() To create a *page break* where the rest of the page becomes blank, use ```typ #pagebreak()```
 
 
-= Hayagriva for Bibliography and References <sec:hayagriva_bibliography>
+== Hayagriva for Bibliography and References <sec:hayagriva_bibliography>
 
 To manage bibliography (*references*) smoothly, use Hayagriva! Hayagriva is a new bibliography file format designed for use with Typst. Read more at #link("https://typst.app/docs/reference/model/bibliography/")[here] and use #link("https://github.com/typst/hayagriva/blob/main/docs/file-format.md")[this] as a guide for file format. An example bibliography file is provided as `ref_examples.yml`. Typst also has suport for Bib(La)Tex files, but Hayagriva is more powerful and has a nicer syntax.
 
@@ -55,7 +55,7 @@ author: ["Omarova, Saule", "Steele, Graham"]
 And some fields accept composite data such as the `url` field above where the date specifies access date.
 
 
-= References <app:referenser>
+== References <app:referenser>
 
 #align(
     center
@@ -92,7 +92,7 @@ Try to find authors and publication dates (year, month) even for web references,
 on the ```yaml url``` field.  An example is~@example:uu (see `refs.yml`).
 
 
-= Formulas, Figures, Images, Code, Timelines <sec:formulas_figures_images_code>
+== Formulas, Figures, Images, Code, Timelines <sec:formulas_figures_images_code>
 
 Formulas, figures, and equations must be described. This means, for example, that each symbol must be explained in the text.
 
@@ -109,19 +109,18 @@ All figures and images that are not your own must have references to the source.
 If you include code snippets, make sure they are relevant and commented, so they can be understood. Alternatively, for short snippets: provide the corresponding explanation in the text. In Typst you use `raw` elements for this purpose, see the code snippet in @sec:examples:code. In this project supported languages are formatted using codly. 
 
 
-= Examples <sec:examples>
+== Examples <sec:examples>
 
 Some examples for different commands in Typst.
 
-== References <sec:examples:references>
-
+=== References <sec:examples:references>
 Uppsala University has 52~917 students @example:uu.
 
 Bell et al. @example:alma[p. 312] describes...
 
 @sec:examples[Chapter] outlines ... and check out @app:typst_tips as well as @sec:examples:figures.
 
-== Acronyms <sec:examples:acronyms>
+=== Acronyms <sec:examples:acronyms>
 
 #import "@preview/abbr:0.3.0"
 // Add multiple entries, each of the form (short, long, long-plural).
@@ -168,7 +167,7 @@ Look at this fabulous building and statue in @img:university_hall.
     caption: "University Hall or the University Main Building is the main building of Uppsala University in Uppsala, Sweden. The statue in front of the building is Erik Gustaf Geijer (1783-1847), a Swedish writer, historian, poet, philosopher, and composer. Photo: ScanianDragon (2023).",
 ) <img:university_hall>
 
-== Tables <sec:examples:tables>
+=== Tables <sec:examples:tables>
 
 Tables can also be placed in figures as seen in @tab:numbers.
 
@@ -183,7 +182,7 @@ Tables can also be placed in figures as seen in @tab:numbers.
     caption: "Number of students and employees at Uppsala University.",
 ) <tab:numbers>
 
-== Code <sec:examples:code>
+=== Code <sec:examples:code>
 #import "@preview/codly:1.3.0": *
 #import "@preview/codly-languages:0.1.1": *
 #show: codly-init.with()
@@ -203,7 +202,7 @@ Finally, you can insert code in a figure as in @listing:sum. I like `codly` for 
     caption: "Python implementation of adding two numbers.",
 ) <listing:sum>
 
-== Math <sec:examples:math>
+=== Math <sec:examples:math>
 // Equetion numbering style
 #set math.equation(numbering: "(1)")
 
@@ -226,7 +225,8 @@ Prove by induction:
 $ sum_(k=1)^n k = (n(n+1)) / 2 $
 
 #set page(margin: 2cm)
-== Timelines in typst <sec:examples:timelines>
+
+=== Timelines in typst <sec:examples:timelines>
 It is always nice to have timelines in reports. For this purpose I prefer using the `timeliney` package. Here is an example of a timeline for a optimization project and more info can be found on the #link("https://typst.app/universe/package/timeliney/")[project page]:
 
 #include "timeplan.typ"
