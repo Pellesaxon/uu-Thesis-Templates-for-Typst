@@ -85,7 +85,7 @@
 #v(0.2cm)
 
 #align(center)[
-  #text(size: 14pt, weight: "bold")[Department of Information Technology]
+  #text(size: 14pt, weight: "bold")[Your Fantastic Department]
 
   #datetime.today().display("[month repr:long] [day], [year]")
 ]
