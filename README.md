@@ -16,11 +16,11 @@
 <br />
 <div align="center">
   <a href="https://github.com/Pellesaxon/uu-Thesis-Templates-for-Typst">
-    <img src="dependencies/logo.svg" 
+    <img src="dependencies/logo_solid.svg" 
     alt="Uppsala university logo" 
     width="200" 
     height="200"
-    style="background: #ffffff; border-radius: 8px;">
+    >
   </a>
 
 <h3 align="center">Uppsala University Thesis Template for Typst</h3>
