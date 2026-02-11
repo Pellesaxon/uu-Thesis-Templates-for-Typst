@@ -32,112 +32,7 @@
   overhang: false,
 )
 
-//If you don't want underlined links, comment out the next line:
-#show link: underline
-// #show link: set text(blue)
-
-#set enum(
-  indent: 12pt,
-  spacing: 18pt,
-)
-#show enum: block.with(
-  above: 30pt,
-  below: 30pt,
-)
-#show list: block.with(
-  above: 30pt,
-  below: 30pt,
-)
-#set par(
-  justify: true,
-)
-#show heading: block.with(
-  above: 30pt,
-  below: 30pt,
-)
-
-// If you don't want italics for references, comment out the next line:
-#show ref: it => emph(it)
-
-// Customize references to show "Appendix" for labels starting with "app:"
-#show ref.where(
-  form: "normal",
-  supplement: auto,
-): set ref(
-  supplement: it => {
-    if "app:" in str(it.label) {
-      "Appendix"
-    } else {
-      it.supplement
-    }
-  },
-)
-
-// Equetion numbering style
-#set math.equation(numbering: "(1)")
-
-// Customize figures
-#show figure: it => {
-  block(
-    above: 24pt,
-    below: 24pt,
-  )[
-    // If figure is a table, place caption above, otherwise below.
-    #let caption_top = it.caption.kind == table
-    // #let caption_top = false
-    
-    // Caption above figure body
-    #if caption_top {
-      line(length: 100%, stroke: 0.8pt)
-      v(-10pt)
-      
-      align(left)[
-        #it.caption
-      ]
-      v(-10pt)
-    }
-
-    // Top rule
-    #line(length: 100%, stroke: 0.8pt)
-    #v(-12pt)
-
-    // Figure body (image / table / etc.)
-    #it.body
-
-    // Botom rule
-    #v(-12pt)
-    #line(length: 100%, stroke: 0.8pt)
-    #v(-10pt)
-
-    // Caption
-    #if (it.caption != none and not caption_top) {
-      [
-        #align(left)[
-          #it.caption
-        ]
-        #v(-10pt)
-        #line(length: 100%, stroke: 0.8pt)
-      ]
-    }
-  ]
-}
-
-// Customize caption style for figure captions
-#show figure.caption: it => [
-  #text(weight: "bold")[
-    #it.supplement #it.counter.display(it.numbering)
-    ~]#it.body
-]
-
-// Set spacing in TOC between top-level entries
-#show outline.entry.where(
-  level: 1,
-): set block(above: 24pt)
-
-// Bold top-level entries in TOC
-#show outline.entry.where(
-  level: 1,
-): set text(weight: "bold")
+#show: doc => styling(doc)
 
 // =====================
 // Metadata (from UppsalaExjobb)
@@ -254,7 +149,6 @@
         #v(-10pt)
         #line(length: 100%, stroke: 0.8pt)
       ]
-      
     }
   ],
 )
