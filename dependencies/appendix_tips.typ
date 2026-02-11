@@ -69,7 +69,7 @@ And some fields accept composite data such as the `url` field above where the da
 Always strive to achieve all three.
 ]]]
 
-Use numerical references (IEEE style~[42]) or keyword-based~[Lam86], not footnote style. The references are sorted alphabetically by author/etc. in the reference list. In Typst, use ```typ #bibliography{"refs.yml", style: "ieee"}```, see the main.tex. 
+Use numerical references (IEEE style~[42]) or keyword-based~[Lam86], not footnote style. The references are sorted alphabetically by author/etc. in the reference list. In Typst, use ```typ #bibliography{"refs.yml", style: "ieee"}```. 
 
 References are written in direct connection to what prompted the reference (e.g., a statement or result), before any punctuation, and with a non-breaking space to the previous word. In Typst, ```typ write~@Lam86``` to get a "non-breaking space." 
 
