@@ -144,6 +144,9 @@
 // Title page
 // ----------------------
 #let title-page(cfg) = {
+  set par(
+    justify: false,
+  )
   let margin = 2.0cm
   set page(
     numbering: none,
@@ -177,16 +180,18 @@
   // ---------- Title ----------
   let title_dx = 3.5cm
   place(
-    dy: logo_width + 0.5cm,
     dx: title_dx,
+    dy: logo_width + 0.5cm,
   )[
     #align(left)[
-      #text(size: 26pt, fill: gray)[#cfg.title] \
-      #if cfg.subtitle != "" [
-        #text(size: 14pt, fill: gray)[#cfg.subtitle]
+      #block(width: 100% - title_dx)[
+        #text(size: 26pt, fill: gray)[#cfg.title] \
+        #if cfg.subtitle != "" [
+          #text(size: 14pt, fill: gray)[#cfg.subtitle]
+        ]
+        #line(length: 100%, stroke: 0.8pt)
+        #text(size: 14pt)[#cfg.author]
       ]
-      #line(length: 100% - title_dx, stroke: 0.8pt)
-      #text(size: 14pt)[#cfg.author]
     ]
   ]
   // ---------- Bottom ----------
@@ -228,17 +233,29 @@
     #image("../dependencies/logo_black.svg", width: logo_width)
   ]
 
+  let header_dx = logo_width + 1.5cm
   place(
     top + left,
-    dx: logo_width + 1.5cm,
+    dx: header_dx,
     dy: -.5cm,
   )[
-    #v(.8cm)
-    #text(size: 12pt, fill: gray)[#cfg.title]
-    #v(-.2cm)
-    #line(length: 100% - (logo_width + 1.5cm), stroke: 0.8pt)
-    #v(-.2cm)
-    #text(size: 12pt)[#cfg.author]
+    #block(
+      width: 100% - header_dx,
+    )[
+      #v(.8cm)
+      #par(justify: false)[
+        #text(
+        size: 12pt, 
+        fill: gray, 
+        )[
+          #cfg.title
+        ]
+      ]  
+      #v(-.2cm)
+      #line(length: 100%, stroke: 0.8pt)
+      #v(-.2cm)
+      #text(size: 12pt)[#cfg.author]
+    ]
   ]
   v(logo_width)
 
