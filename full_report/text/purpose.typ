@@ -1,3 +1,5 @@
+#import "../uppsala_thesis.typ": *
+
 Here you essentially describe your problem formulation. This section should state the purpose, goals, and motivation for the project. These do not need to be separate subheadings.
 
 *Purpose:*

@@ -1,3 +1,5 @@
+#import "../uppsala_thesis.typ": *
+
 Appendices can be useful for attachments such as surveys, larger code segments, etc.
 
 Appendices should be placed after the reference list and should start on a new page. Use `#pagebreak()` to create a page break where the rest of the current page is blank. Then use 

@@ -1,3 +1,5 @@
+#import "../uppsala_thesis.typ": *
+
 Here, you describe the background of your project, i.e., what leads up to your problem formulation. What is the area, environment, context, and background for the project (more detailed and deeper than in the introduction)? Describe the area (e.g., sound processing, study plans, visualization, autism...). Describe the client, if you have one (but not too detailed). Keep in mind that the background and the problem must be at a general academic level and not just related to a specific client.
 
 Remember that the background can look further back --- how was the problem solved before? Before computerization? Sometimes it is both important and interesting (but sometimes not).

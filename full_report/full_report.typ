@@ -11,19 +11,11 @@
 // =====================
 // Imports
 // =====================
-#import "@preview/abbr:0.3.0"
-#import "@preview/codly:1.3.0": *
-#import "@preview/codly-languages:0.1.1": *
-#import "@preview/tblr:0.4.4": *
 #import "uppsala_thesis.typ": *
 
 // =====================
 // Document setup
 // =====================
-#show: codly-init.with()
-#codly(languages: codly-languages)
-
-
 #set text(
   font: "Roboto", // If you don't have it Roboto is stored in dependencies. You might have to install static version for Typst to work, Alternatively switch to Libertinus Serif
   // font: "Libertinus Serif",

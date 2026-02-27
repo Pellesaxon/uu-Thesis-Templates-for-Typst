@@ -1,3 +1,5 @@
+#import "../uppsala_thesis.typ": *
+
 Describe at least the same things as in the abstract, but in more detail --- typically 1-2 pages. Save technical details for later, as the reader is not yet familiar with them.
 
     + What is the area you are working in? What is the problem, subject, context?

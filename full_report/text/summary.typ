@@ -1,3 +1,5 @@
+#import "../uppsala_thesis.typ": *
+
 Sammanfattning, alltid på svenska. Se till att det står samma saker i den svenska sammanfattningen och det engelska abstractet.
 
   + Vad är problemet, ämnet?

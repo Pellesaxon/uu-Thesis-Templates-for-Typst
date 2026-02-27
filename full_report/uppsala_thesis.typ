@@ -1,8 +1,18 @@
-#let logo_width = 4.2cm
+// ----------------------
+// Imports
+// ----------------------
+#import "@preview/abbr:0.3.0"
+#import "@preview/codly:1.3.0": *
+#import "@preview/codly-languages:0.1.1": *
+#import "@preview/tblr:0.4.4": *
+#import "@preview/drafting:0.2.2": *
+#include calc
 
 // ----------------------
 // Configuration record
 // ----------------------
+#let logo_width = 4.2cm
+
 #let thesis-config(
   title: "",
   subtitle: "",
@@ -137,8 +147,16 @@
     level: 1,
   ): set text(weight: "bold")
 
+  // Codly setup
+  show: codly-init.with()
+  codly(languages: codly-languages)
+
   it
 }
+
+// Disable justify for margin notes
+#let original-margin-note = margin-note
+#let margin-note(body) = original-margin-note[#par(justify: false)[#body]]
 
 // ----------------------
 // Title page

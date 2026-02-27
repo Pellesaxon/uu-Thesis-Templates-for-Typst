@@ -1,1 +1,3 @@
+#import "../uppsala_thesis.typ": *
+
 Here you describe potential future developments of the thesis. Where is there potential for improvement and what can be built upon? What interesting extensions did you not have time for?

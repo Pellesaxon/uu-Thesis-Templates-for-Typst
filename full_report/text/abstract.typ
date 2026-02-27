@@ -1,3 +1,5 @@
+#import "../uppsala_thesis.typ": *
+
 Abstract, always in English, about 10-20 lines. Do not use references, and do not use formulas if they can be avoided.
 
     + What is the problem/issue/subject?
