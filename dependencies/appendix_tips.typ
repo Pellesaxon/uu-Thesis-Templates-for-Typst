@@ -54,20 +54,19 @@ author: ["Omarova, Saule", "Steele, Graham"]
 ```
 And some fields accept composite data such as the `url` field above where the date specifies access date.
 
-
 == References <app:referenser>
+#import "@preview/drafting:0.2.2": *
+// Disable justify for margin notes
+#let original-margin-note = margin-note
+#let margin-note(body) = original-margin-note[#par(justify: false)[#body]]
 
-#align(
-    center
-)[#rect(
-    width: 90%
-)[#align(left)[
-*NOTE: important!* There are at least three purposes for the design of references and the reference list.
-+ One should find the reference (from the text) in the reference list.
-+ One should understand what is being referred to (what type of reference it is) so that one can evaluate it.
-+ One should be able to find the reference in reality.
-Always strive to achieve all three.
-]]]
+#inline-note()[
+    *NOTE: important!* There are at least three purposes for the design of references and the reference list.
+    + One should find the reference (from the text) in the reference list.
+    + One should understand what is being referred to (what type of reference it is) so that one can evaluate it.
+    + One should be able to find the reference in reality.
+    Always strive to achieve all three.
+]
 
 Use numerical references (IEEE style~[42]) or keyword-based~[Lam86], not footnote style. The references are sorted alphabetically by author/etc. in the reference list. In Typst, use ```typ #bibliography{"refs.yml", style: "ieee"}```. 
 
