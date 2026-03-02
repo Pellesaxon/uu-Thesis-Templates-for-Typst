@@ -1,10 +1,9 @@
-// Author: Oskar Perers
-//
-// Inspiration from:
-// Provided template as well as
-// https://github.com/independent-project-in-it-uu-2021/rapport-mall
-// and
-// https://www.overleaf.com/latex/templates/mall-kandidatarbete-i-teknisk-fysik-uppsala-universitet/hcvpscsrypvt
+/**
+Authors: Oskar Perers
+
+Acknowledgements:
+The thesis proposal is a port of the [Thesis Specifacation Template](https://www.overleaf.com/latex/templates/thesis-specifacation-template/jvcjpqghxnnf) written by Bedour Alshaigy. In addition the appendix tips are based on the (also UNOFFICIAL) [Uppsala University Thesis Template](https://sv.overleaf.com/latex/templates/uppsala-university-thesis-template/sptrqrdhcdxz) which in turn almost completely consists of translations of the [independent-project-in-it-uu-2022/rapport-mall](https://github.com/independent-project-in-it-uu-2022/rapport-mall), written by Sofia Cassel and Björn Victor.
+**/
 
 // DRAFT VERSION
 // Change to false for final version

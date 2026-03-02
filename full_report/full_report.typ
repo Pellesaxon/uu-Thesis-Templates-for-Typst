@@ -1,8 +1,9 @@
-// Author: Oskar Perers
-//
-// Inspiration from:
-// https://github.com/independent-project-in-it-uu-2021/rapport-mall
-// https://www.overleaf.com/latex/templates/mall-kandidatarbete-i-teknisk-fysik-uppsala-universitet/hcvpscsrypvt
+/**
+Authors: Oskar Perers
+
+Acknowledgements:
+The report template is a port of the (also UNOFFICIAL) [Uppsala University Thesis Template](https://sv.overleaf.com/latex/templates/uppsala-university-thesis-template/sptrqrdhcdxz) for LaTeX, translated by unknown student based on [independent-project-in-it-uu-2022/rapport-mall](https://github.com/independent-project-in-it-uu-2022/rapport-mall), written by Sofia Cassel and Björn Victor, and [Mall – Kandidatarbete i teknisk fysik (Uppsala universitet)](https://sv.overleaf.com/latex/templates/mall-kandidatarbete-i-teknisk-fysik-uppsala-universitet/hcvpscsrypvt), written by Jesper Carlsson. The text in the present report template is from the unofficial [Uppsala University Thesis Template](https://sv.overleaf.com/latex/templates/uppsala-university-thesis-template/sptrqrdhcdxz), which in turn almost completely consists of translations of the [independent-project-in-it-uu-2022/rapport-mall](https://github.com/independent-project-in-it-uu-2022/rapport-mall).
+**/
 
 // DRAFT VERSION
 // Change to false for final version
