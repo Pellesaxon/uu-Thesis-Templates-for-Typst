@@ -298,6 +298,12 @@
       Supervisor: #cfg.supervisor #h(6pt) Subject reader: #cfg.reviewer  \
       Examiner: #cfg.examiner
     ]
+    
+    #if cfg.secrecy != "" {
+      text(size: 10pt, fill: gray)[
+        #cfg.secrecy
+      ]
+    }
   ]
 
   pagebreak(to: "odd")
