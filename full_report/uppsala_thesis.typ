@@ -85,8 +85,11 @@
   set math.equation(numbering: "(1)")
 
   // Customize figures
+  // Customize figures
   show figure: it => {
-    block(
+    let placement_ = if it.placement == none { auto } else { it.placement }
+
+    place(placement_, float: true, block(
       above: 24pt,
       below: 24pt,
     )[
@@ -127,7 +130,7 @@
           #line(length: 100%, stroke: 0.8pt)
         ]
       }
-    ]
+    ])
   }
 
   // Customize caption style for figure captions
